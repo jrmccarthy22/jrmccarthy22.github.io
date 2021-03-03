@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Juliana's Nifty Website</title>
+       <style>
+    body {
+        background: rgb(225, 98, 205);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(39, 80, 201);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: white;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+</style>
+    </head>
+    <body>
+        <div id="all contents">
+            <nav>
+                <h1>Juliana's Nifty Website</h1>
+                <ul>
+                    <li>
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html"> Portfolio </a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div class="sidebar">
+                    <img src="https://i.pinimg.com/originals/83/b7/a2/83b7a22ae4f5f1c713115d4914b386c2.jpg">
+                </div>
+                <div class="content">
+                    <h2>Juliana McCarthy</h2>
+                    <p>Package Handler</p>
+                    <div id="interests">
+                        <h3>Interests</h3>
+                        <ul>
+                            <li>baking</li>
+                            <li>painting</li>
+                            <li>petting my cats</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
