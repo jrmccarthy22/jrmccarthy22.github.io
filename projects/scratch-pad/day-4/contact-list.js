@@ -75,10 +75,14 @@ function makeContactList() {
             }
         },
         printAllContactNames: function() {
+            var fullName = [];
             //should return a String formated with all the full-names of the separated with a line-break
             for (var i = 0; i < contacts.length; i++) {
-                return contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"] + "\n";
+                fullName.push(contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]);
+                
             }
+            var string = fullName.join("\n");
+                return string;
         }
     }
 }

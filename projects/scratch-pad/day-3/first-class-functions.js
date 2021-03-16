@@ -102,8 +102,7 @@ function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     var collection = [];
     for (var i = 0; i < strings.length; i++) {
-        modify(strings[i]); 
-        collection.push(strings[i]);
+        collection.push(modify(strings[i]));
     } return collection;
     
     
@@ -123,8 +122,13 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     for (var i = 0; i < strings.length; i++) {
-        test(strings[i]);
-    }
+       if (strings.every(test)) {
+           return true;
+       } else {
+           return false;
+       }
+    } 
+    console.log(test(strings[i]));
     
     
     
