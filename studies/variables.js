@@ -40,8 +40,8 @@ myCat = "Gandalf";
 console.log(myCat); //prints "Gandalf"
 
 const myOtherCat = "Iris";
-myOtherCat = "Gandalf";
-console.log(myOtherCat); //prints Type error: assignment to constant variable
+//myOtherCat = "Gandalf";
+//console.log(myOtherCat); //prints Type error: assignment to constant variable
 
 const myKat = "Gandalf";
 console.log(myKat); //prints "Gandalf"
@@ -78,8 +78,8 @@ for (var i = 0; i < 10; i++) {
 //it will know the variable has been declared, but it wont know the value until after the value has been assigned 
 
 console.log(q); //prints undefined, still doesnt know value is 3
-console.log(m); //reference error
-console.log(p); //reference error
+//console.log(m); //reference error
+//console.log(p); //reference error
 
 var q = 3;
 let m = 5;

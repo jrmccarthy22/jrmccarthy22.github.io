@@ -1,7 +1,7 @@
 /*
- * DATATYPES:
- *
- * 0. simple/primitive datatypes 
+ DATATYPES:
+ 
+  0. simple/primitive datatypes 
     include: string- character/text data, used w ""
              number- numerical data
              boolean- true or false value
@@ -76,7 +76,8 @@ console.log(myObj.name); //prints 'Iris'
 
 /*
  * 2. infinity/-infinity:
-    -
+    -global property Infinity is a numeric value representing infinity
+    -represented by Number.POSITIVE_INFINITY
  */
  
  
