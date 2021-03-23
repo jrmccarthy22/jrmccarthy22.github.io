@@ -385,10 +385,7 @@ _.every = function(collection, test) {
                 bool = false;
             }
         })
-    } return bool;
-    
-    
-    
+    } return bool
 }
 
 /** _.some
@@ -411,8 +408,21 @@ _.every = function(collection, test) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-_.some = function(list, test) {
-    
+_.some = function(collection, test) {
+     var bool = false;
+    if (typeof test === 'function') {
+        _.each(collection, function(val, i, col) {
+            if (test(val, i, col) === true) {
+                bool = true;
+            }
+        })
+    } else {
+        _.each(collection, function(val, i, col) {
+            if (val === true) {
+                bool = true;
+            }
+        })
+    } return bool;
 }
 
 /** _.reduce
@@ -469,7 +479,7 @@ _.reduce = function(array, func, seed) {
 */
 _.extend = function(object1, object2) {
     
-    Object.assign(object1, arguments);
+    Object.assign(object1, ...arguments);
     return object1;
 }
 //////////////////////////////////////////////////////////////////////
