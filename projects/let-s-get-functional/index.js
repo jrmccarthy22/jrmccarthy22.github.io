@@ -60,35 +60,124 @@ var oldestCustomer = function(array) {
 //input array
 //output string of name 
 var youngestCustomer = function(array) {
-    var youngestAge = array.reduce(function(accum, value, i) {
-        if (value.age < accum) {
-            accum = value.age;
-        } return accum;
+    array.sort(function(a, b) {
+        return a.age-b.age;
+    });
+    return array[0].name;
+};
+
+//input array
+//output number
+var averageBalance = function(array) {
+    var total = array.reduce(function(accum, person, i) {
+        var balance = person.balance;
+        var balance1 = balance.replace(/,/g, "");
+        var balance2 = balance1.slice(1);
+        accum += parseFloat(balance2);
+        return accum;
     }, 0);
-    for (var i = 0; i < array.length; i++) {
-        if (array[i].age === youngestAge) {
-            var youngestCust = array[i];
+    return total / array.length;
+};
+
+//input array, letter
+//output number of elements in array that start with letter
+var firstLetterCount = function(array, char) {
+    var result = 0
+    for (var i =0; i < array.length; i++) {
+        var name = array[i].name;
+        name = name.charAt(0).toUpperCase();
+        char = char.toUpperCase();
+        if (name.startsWith(char) === true) {
+            result += 1;
         }
-    } return youngestCust.name;
+    } return result;
+};
+
+//input array, customer, letter
+//number of friends the customer has whose name start with letter 
+var friendFirstLetterCount = function(array, person, char) {
+    //find {person} in the array and set their friends array to a variable 
+    for (var i =0; i < array.length; i++) {
+        if (array[i].name === person) {
+            var friends = array[i].friends;
+        }
+    }
+    //loop through friends array and add 1 to result variable if name starts with {char}
+    //make sure names are all same case (upper/lower)
+    var result = 0;
+    for (var i =0; i < friends.length; i++) {
+        var name = friends[i].name;
+        name = name.charAt(0).toUpperCase();
+        char = char.toUpperCase();
+        if (name.startsWith(char) === true) {
+            result += 1;
+        }
+    } return result;
+};
+
+//input array, name
+//output array of names of people who have -name- in their friends list
+
+var friendsCount = function(array, name) {
+    
+    var result = [];
+    for (var i =0; i < array.length; i++) {
+        var friends = array[i].friends;
+        for (var j =0; j < friends.length; j++) {
+            if (friends[j].name === name) {
+                result.push(array[i].name);
+            }
+        }
+    }
+    return result;
+    
+};
+
+
+//find three most common tags among all customers tags 
+//input array
+//output array of three 
+var topThreeTags = function(array) {
+    
+    //create one array with all tags of all customers
+    function push(array, newArray) {
+     for(var i = 0; i < array.length; i++) {
+            newArray.push(array[i]);
+     }
+      return newArray;
 }
+    var allTags = [];
+    for(var i = 0; i < array.length; i++) {
+     push(array[i].tags, allTags);
+    }
+    //create object that counts # of times each tag appears in allTags
+    var tagCount = {};
 
-var averageBalance = function() {
-    
-};
-
-var firstLetterCount = function() {
-    
-};
-
-var friendFirstLetterCount = function() {
-    
-};
-
-var friendsCount = function() {
-    
-};
-
-var topThreeTags = function() {
+    for(var i = 0; i < allTags.length; i++) {
+        var value = allTags[i];
+        if(tagCount[value]) {
+            tagCount[value]++;
+        }
+        else {
+            tagCount[value] = 1;  
+        }
+    };
+    //create nested array of [[tag, value], [tag, value]]
+    var countArray = [];
+    for (var key in tagCount) {
+        countArray.push([key, tagCount[key]]);
+    };
+    //sort array by value
+    countArray.sort(function(a, b) {
+        return b[1] - a[1];
+    });
+    //make new array with first three tag names
+    var namesArray = [];
+    for(var i = 0; i < 3; i++) {
+        namesArray.push(countArray[i][0]);
+    }
+    //return array
+    return namesArray;
     
 };
 

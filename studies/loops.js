@@ -2,7 +2,7 @@
 LOOPS
 
 
-For-in loops
+For loops
     -used when we know how many times the loop will run
     -used for looping over arrays 
     -have several elements
@@ -43,7 +43,7 @@ console.log(revArray); //[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 
 /*
-For loops
+For in loops
     -used for looping over properties of objects
 */
 
